@@ -22,3 +22,21 @@ border-style:groove;
 border-color:#800040;
 border-width:medium;
 }
+header {
+width: 100%;
+}
+main {
+width: 50%;
+}
+aside {
+    width: 25%;
+}
+nav {
+    margin-left: 4%
+    float: left;
+    margin-top: -1%;
+}
+header h1 {
+    margin-left: 43%;
+    font-size: 5em;
+}
