@@ -1,0 +1,25 @@
+/*stylesheet*/
+
+header {
+    width: 100%;
+}
+nav {
+    margin-left: 5%;
+    margin-top: -2%;
+    float: left;
+}
+nav li {
+    font-size: 2em;
+    line-height: 1.5;
+    border-left: 10px;
+}
+nav li:hover {
+    border-color: #004d80;
+}
+aside {
+    background-color: #80ccff;
+    width: 25%;
+    postion: fixed;
+    padding: 1%;
+}
+
