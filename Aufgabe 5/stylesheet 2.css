@@ -22,4 +22,7 @@ aside {
     postion: fixed;
     padding: 1%;
 }
-
+main {
+    margin-left: 25%;
+    width: 50%;
+}
