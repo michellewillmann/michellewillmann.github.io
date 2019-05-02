@@ -19,7 +19,7 @@ li {
 aside {
     background-color: #80ccff;
     width: 25%;
-    postion: absolute;
+    position: absolute;
     padding: 1%;
 }
 .Asideleft { 
@@ -57,7 +57,6 @@ img {
     border-width:5px;
     border-style: double;
     border-color: #000000;
-    border-radius: 5px;
     margin-left: 5%;
 }
 article {
