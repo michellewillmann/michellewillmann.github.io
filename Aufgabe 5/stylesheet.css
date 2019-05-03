@@ -31,6 +31,7 @@ aside {
     clear:left;
     margin-right: 20px;
     margin-left: 20px;
+    padding-left: 70%;
 }
 h2 {
     margin-left: 5%;
@@ -57,6 +58,7 @@ section {
     margin-right: 10px;
     margin-bottom: 10px;
     margin-top: 10px;
+    overflow: scroll;
 }
 img {
     height: 150px;
