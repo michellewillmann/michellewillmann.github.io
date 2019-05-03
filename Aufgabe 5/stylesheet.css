@@ -78,7 +78,7 @@ article {
 }
 .Asideright {
     margin-left: 25%;
-    float: left;
+    clear:left;
 }
 footer {
     clear:left;
