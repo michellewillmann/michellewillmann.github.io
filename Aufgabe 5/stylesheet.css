@@ -6,14 +6,14 @@ header {
 h1 {
     text-align: center;
     font-size: 3em;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     color: #000000;
 }
 ul {
     list-style-type: none;
     background-color:#ffffff;
     overflow: hidden;
-    padding-left: 20%;
+    padding-left: 24%;
     padding-right: 20%;
 }
 li {
@@ -53,6 +53,7 @@ main {
     position: relative;
     z-index: 5;
     width: 50%;
+    background-color: #80ccff;
 }
 section {
     background-color: #ffffff;
