@@ -78,6 +78,7 @@ article {
 }
 aside.right {
     margin-left: 25%;
+    padding-left:70%;
     clear:left;
 }
 footer {
