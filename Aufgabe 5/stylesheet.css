@@ -30,6 +30,8 @@ aside {
     position: absolute;
     padding: 1%;
     margin-left: 1em;
+    border-style: dotted;
+    border-color: #000000;
    
 }
 aside.left { 
@@ -43,7 +45,7 @@ h2 {
 }
 p {
     color: #000000;
-    background-color: #ffffff;
+    background-color: #e6ccff;
     font-family: 'Times New Roman', Times, serif;
 }
 main {
@@ -54,9 +56,11 @@ main {
     z-index: 5;
     width: 50%;
     background-color: #80ccff;
+    border-style: dotted;
+    border-color: #000000;
 }
 section {
-    background-color: #ffffff;
+    background-color: #e6ccff;
     width: 30%;
     float:left;
     margin-left: 10px;
