@@ -23,9 +23,10 @@ li {
 }
 aside {
     background-color: #80ccff;
-    width: 25%;
+    width: 22%;
     position: absolute;
     padding: 1%;
+    margin-left: 1em;
 }
 aside.left { 
     clear:left;
@@ -42,7 +43,7 @@ p {
     font-family: 'Times New Roman', Times, serif;
 }
 main {
-    margin-left: 25%;
+    margin-left: 26%;
     margin-right: 25%;
     float: left;
     position: relative;
@@ -78,7 +79,6 @@ article {
 }
 aside.right {
     margin-left: 25%;
-    padding-left:70%;
     clear:left;
 }
 footer {
