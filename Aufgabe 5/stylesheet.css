@@ -45,7 +45,7 @@ h2 {
 }
 p {
     color: #000000;
-    background-color: #e6ccff;
+    background-color: #ffffff;
     font-family: 'Times New Roman', Times, serif;
 }
 main {
@@ -91,6 +91,8 @@ article {
 footer {
     clear:left;
     width:100%;
+    background-color: #ffffff;
+
 }
 body {
     float:left;
