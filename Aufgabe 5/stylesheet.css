@@ -99,3 +99,17 @@ body {
     float:left;
     background-color: #e6ccff;
 }
+nav > ul {
+	border: 1px solid #222;
+	left: -80px;
+    list-style-type:none;
+	margin: 0;
+    padding:5px 20px;
+	position: absolute;
+	top: 45px;
+			transition:all .3s ease;
+	-webkit-transition:all .3s ease;
+}
+
+
+
