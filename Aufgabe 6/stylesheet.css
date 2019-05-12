@@ -157,54 +157,50 @@ nav:hover {
     visibility: visible;
     height: 111px;
 }
+@media screen and (max-width: 36em){
 
-@media only screen and (min-width:63em) (orientation: landscape) {
-/*content:"Mode: Desktop/3-spaltig"*/
+    aside{height: 50%;
+        width: 100%
+    }
     main{
-        width: 60%;
-        margin-left: 20%;
-        margin-top: 5.5em;
-    }
-    section{
-        width: 20%;
-        float:left;
-        margin-left: 2%;
-    }
-
-    aside{
-        background-color: #ccccb3;
-        width: 15%;
-        position: fixed;
-        padding: 1%;
-        margin-top: 3em;
-    }
-    aside:hover{
-        width: 17.5%;
-    }
-    section:first-of-type,section:nth-of-type(2n+1){
-        margin-left: 0%;
-    }
-}
-
-@media only screen and(min-width:90em) (orientation: portrait ) {
-    /*content:"Mode:Phone/1-spaltig"*/
-     main{
-        width: 60%;
+        width: 36em;
         margin-left: 20%;
     }
     section{
-        width: 23.5%;
+        height: 15em;
+        overflow: auto;
+        width: 36em;
         float:left;
+    }
+
+    section{
         margin-left: 2%;
     }
 
-    section:nth-of-type(2n+1){
-        margin-left: 2%;
-    }
-
-    section:first-of-type,section:nth-of-type(4n+1) {
+    section{
         margin-left: 0%;
         clear:both;
     }
 }
 
+@media screen and (max-width: 63em){
+    aside{height: 80%;
+        width: 100%
+        overflow: auto;
+    }
+    main{
+        width: 100%;
+        margin-left: 20%;
+    }
+    section{
+        height: 20em;
+        overflow: auto;
+        width: 63em;
+        float:left;
+    }
+
+    section{
+        margin-left: 0%;
+        clear:both;
+    }
+}
