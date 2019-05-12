@@ -9,23 +9,19 @@ h1 {
     font-family: 'Times New Roman', Times, serif;
     color: #000000;
 }
-nav ul {
+ul {
     padding-left: 0;
-    margin: 0;
+    margin: 1em;
     width: 9em;
     position: fixed;
     height: 4em;
     overflow: hidden;
-    z-index: 100;
-    border-radius: 5px;
 }
 
-nav li {
-    display: block;
+li {
     float: left;
-    text-align: center;
     color: #ffffff;
-    padding: 3px 0%;
+    padding: 20px;
     text-decoration: none;
     font-size: 1em;
 }
@@ -103,21 +99,6 @@ footer {
 body {
     float:left;
     background-color: #e6ccff;
-}
-
-nav {
-    width: 9em;
-    position: fixed;
-    height: 4em;
-    overflow: hidden;
-    z-index: 100;
-    border-radius: 5px;
-}
-div {
-height: 5px;
-background-color: magenta;
-margin: 6px 0;
-width: 50px;
 }
 
 
