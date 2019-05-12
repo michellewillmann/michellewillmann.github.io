@@ -9,7 +9,7 @@ h1 {
     font-family: 'Times New Roman', Times, serif;
     color: #000000;
 }
-ul {
+nav ul {
     padding-left: 0;
     margin: 0;
     width: 9em;
@@ -20,12 +20,12 @@ ul {
     border-radius: 5px;
 }
 
-li {
+nav li {
     display: block;
     float: left;
     text-align: center;
     color: #ffffff;
-    padding: 3px 0%
+    padding: 3px 0%;
     text-decoration: none;
     font-size: 1em;
 }
@@ -113,7 +113,12 @@ nav {
     z-index: 100;
     border-radius: 5px;
 }
-
+div {
+height: 5px;
+background-color: magenta;
+margin: 6px 0;
+width: 50px;
+}
 
 
 
