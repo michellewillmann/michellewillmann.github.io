@@ -1,21 +1,28 @@
 //hello
 console.log("Konsolen-Test");
 //Website geladen
-window.onload = pageLoaded;
-function pageLoaded() {
-    alert("Die Seite ist geladen");
-}
-//Inhalt eines Buttons ändern
-document.getElementById("Button1a").addEventListener("click", ChangeText1);
+window.onload = function () {
+    console.log("Daten wurden geladen");
+    document.getElementById("button1").addEventListener("click", ChangeText1);
+    document.getElementById("button3").addEventListener("click", ChangeText2);
+    document.getElementById("button2").addEventListener("click", ChangeText3);
+    alert("Die Seite ist geladen,wenn du auf Ok klickst");
+};
+//Change Text
+document.getElementById("button1").addEventListener("click", ChangeText1);
 function ChangeText1() {
     console.log("Button1 wurde benutzt");
-    document.getElementById("button1").innerHTML = "Ich sagte doch nicht drücken";
+    document.getElementById("button1").innerHTML = "Ich sagte doch nicht klicken";
 }
-//Klasse ändern
-document.getElementById("Button3").addEventListener("click", ChangeClass);
-function ChangeClass() {
-    document.getElementById("button3").className = "neue Klasse";
-    console.log("Neuer Klassenname:" + document.getElementById("button3").className);
+document.getElementById("button2").addEventListener("click", ChangeText3);
+function ChangeText3() {
+    document.getElementById("button2").innerHTML = "Es reicht doch jetzt!";
+    console.log("Button2 wurde ebenfalls benutzt");
+}
+document.getElementById("Button3").addEventListener("click", ChangeText2);
+function ChangeText2() {
+    document.getElementById("button3").innerHTML = "War klar das du den auch noch anklickst";
+    console.log("Button3 wurde benutzt");
 }
 //Variablen
 let var1 = 2;
@@ -36,5 +43,11 @@ console.log(m);
 function Rechnung() {
     console.log(a + b);
     console.log(a + x);
+}
+function addElement() {
+    let newText = document.createElement("p");
+    let sparty = document.getElementById("button2");
+    sparty.appendChild(newText);
+    newText.innerHTML = "Neues Element!!!";
 }
 //# sourceMappingURL=script.js.map
