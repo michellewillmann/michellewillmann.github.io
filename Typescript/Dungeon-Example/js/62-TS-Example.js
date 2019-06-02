@@ -16,7 +16,7 @@ let monsterName = ["Ratte", "Nagetier", "Ungeziefer", "Kürbis", "Alien", "Zombi
 let suffix = [" des Verderbens", " aus der Hölle", " der Lethalität", " mit Rheuma", " der Redundanz", " der Zerberstung"]; // length = 6, da hier 6 Einträge sind. Von 0-5.
 let monsterModifers = ["Ist nervig", "Linkshänder", "Bier-Connoisseur", "Verfehlt häufig", "Prokrastiniert", "Müde", "Verwirrt", "Wasserscheu", "Bipolar", "Hat Schnupfen", "Verläuft sich oft"]; // Eine Reihe von zufälligen "Verstärkern" für das Monster.
 let monsterWaffe = ["Apfel", "Erdbeere", "Banane", "Kürbis"];
-let Bildquelle = ["imgs/Kürbis.png", "imgs/Alien.png", "imgs/Zombie.png", "imgs/pinguin.png", "imgs/elefant.png", "imgs/loewe.png"];
+let monsterSrc = ["imgs/Kürbis.png", "imgs/Alien.png", "imgs/Zombie.png", "imgs/pinguin.png", "imgs/elefant.png", "imgs/loewe.png"];
 let ArrayPush = [];
 // -- Initialisierung für viele/variable Anzahl an Monster --
 let monsterArray = []; // Das Haupt-Array wurde erstellt und initialisiert!
@@ -50,7 +50,7 @@ function generateMonster() {
         monsterHitPoints: newMonsterHP,
     };
     monsterArray.push(newMonster); // Monster wird erst in diesem Schritt zu dem Array hinzugefügt 
-    console.log(monsterArray[0].monsterExperience); // Man kann nur auf Array-Teile zugreifen, welche definiert sind. -1 ist nicht definitiert (und wird es auch nie sein).
+    //console.log(monsterArray[0].monsterExperience);                    // Man kann nur auf Array-Teile zugreifen, welche definiert sind. -1 ist nicht definitiert (und wird es auch nie sein).
     monsterGenerateHTML(); // Triggere die Generierung von HTML
 }
 // Generiert HTML-Elemente, welche dann einem Element untergeordnet werden. Erzeugt ebenfalls einen Event-Listener auf dem Button.
@@ -137,9 +137,9 @@ function generateMonsterWaffe() {
     return tempMonsterWaffe;
 }
 function generateMonsterImage() {
-    let rngNumber = getRNGNumber(Bildquelle.length);
-    let generateMonsterImage = Bildquelle[rngNumber];
-    return Bildquelle[rngNumber];
+    let rngNumber = getRNGNumber(monsterSrc.length);
+    let generateMonsterImage = monsterSrc[rngNumber];
+    return generateMonsterImage;
 }
 // Aufgerufen, wenn man auf den Button klickt.
 // Der Spieler kämpft gegen das entsprechende Monster. Er erhält dann Erfahrungspunkte.

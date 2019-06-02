@@ -49,7 +49,7 @@ let suffix : string[] = [" des Verderbens", " aus der Hölle", " der Lethalität
 
 let monsterModifers : string[] = ["Ist nervig", "Linkshänder", "Bier-Connoisseur", "Verfehlt häufig", "Prokrastiniert", "Müde", "Verwirrt", "Wasserscheu", "Bipolar", "Hat Schnupfen", "Verläuft sich oft"]; // Eine Reihe von zufälligen "Verstärkern" für das Monster.
 let monsterWaffe: string []= ["Apfel","Erdbeere","Banane","Kürbis"];
-let Bildquelle: string []= ["imgs/Kürbis.png", "imgs/Alien.png", "imgs/Zombie.png","imgs/pinguin.png","imgs/elefant.png","imgs/loewe.png"];
+let monsterSrc: string []= ["imgs/Kürbis.png", "imgs/Alien.png", "imgs/Zombie.png","imgs/pinguin.png","imgs/elefant.png","imgs/loewe.png"];
 
 let ArrayPush: number []=[];
 
@@ -96,7 +96,7 @@ function generateMonster()
 
     monsterArray.push(newMonster);                                      // Monster wird erst in diesem Schritt zu dem Array hinzugefügt 
 
-    console.log(monsterArray[0].monsterExperience);                    // Man kann nur auf Array-Teile zugreifen, welche definiert sind. -1 ist nicht definitiert (und wird es auch nie sein).
+    //console.log(monsterArray[0].monsterExperience);                    // Man kann nur auf Array-Teile zugreifen, welche definiert sind. -1 ist nicht definitiert (und wird es auch nie sein).
 
     monsterGenerateHTML();                                              // Triggere die Generierung von HTML
 }
@@ -212,10 +212,11 @@ function generateMonsterWaffe ():string{
     return tempMonsterWaffe;
 }
 function generateMonsterImage (): string{
-    let rngNumber: number=getRNGNumber(Bildquelle.length);
-    let generateMonsterImage:string= Bildquelle[rngNumber];
-    return Bildquelle[rngNumber];
+    let rngNumber: number=getRNGNumber(monsterSrc.length);
+    let generateMonsterImage:string= monsterSrc[rngNumber];
+    return generateMonsterImage;
 }
+
 
 // Aufgerufen, wenn man auf den Button klickt.
 // Der Spieler kämpft gegen das entsprechende Monster. Er erhält dann Erfahrungspunkte.
