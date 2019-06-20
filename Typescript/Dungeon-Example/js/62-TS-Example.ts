@@ -121,7 +121,7 @@ function monsterGenerateHTMLALL(){
 }
 function clearMonsterCell(){
     let monsterCell =document.getElementById("monsterHoldingCell");
-    if (monsterCell.hasChildNodes){
+    while (monsterCell.hasChildNodes){
         monsterCell.removeChild(monsterCell.firstChild)
     }
 }
