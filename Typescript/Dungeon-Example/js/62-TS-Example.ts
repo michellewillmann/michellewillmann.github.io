@@ -273,7 +273,7 @@ function generateMonsterImage (): string{
 
 function fightAllMonsters(){
     for (let i=0;i<monsterArray.length;i++){
-        let prevPlayerXP:number=0;
+        let prevPlayerXP:number=4;
         fightMonster(i);
         if(playerXP>prevPlayerXP){
             i=i-1;
