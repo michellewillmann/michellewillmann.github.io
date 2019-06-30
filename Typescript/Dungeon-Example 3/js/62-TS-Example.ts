@@ -367,7 +367,7 @@ function imagePush():string[]
 let  src:string[]=[]
 console.log(src);
 for(let i=1; i<50;i++){
-    let path: stringg="monster"+i+"png";
+    let path: string="monster"+i+"png";
     src.push(path);
    console.log(src);
 }
