@@ -1,9 +1,41 @@
+#redCard{
+    border-color: red;
+    border-style: double;
+    background-color: red;
+    margin: 5em;
+}
+#greenCard{
+    border-color: green;
+    border-style: double;
+    background-color: green;
+    margin: 5em;
+}
+#blueCard{
+    border-color: blue;
+    border-style: double;
+    background-color: blue;
+    margin: 5em;
+}
+#yellowCard{
+    border-color: yellow;
+    border-style: double;
+    background-color: yellow;
+    margin: 5em;
+}
+section{
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
 div{
-border-color: red;
 border-style: double;
-width: 25em;
-height: 15em;
+width: 400px;
+height: 100px;
 }
 h1{
-color: blueviolet;
+color:black;
+text-align: center;
+}
+header{
+    width: 100%;
 }
