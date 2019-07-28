@@ -9,7 +9,7 @@ window.onload = function () {
 };
 //Funktionen
 function mischenUndNehmen() {
-    clearAll();
+    ClearAll();
     generateKartenstapel();
     Kartenstapel = shuffle(Kartenstapel);
 }
