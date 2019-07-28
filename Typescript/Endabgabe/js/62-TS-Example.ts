@@ -1,6 +1,9 @@
 interface Karte{
     kartenFarbe:string;
     kartenWert:number;
+    number:number;
+    kartenZahl:number;
+
 }
 
 //Arrays
@@ -10,184 +13,365 @@ let Kartenstapel:Karte[]=[];
 let Ablagestapel:Karte[]=[];
 
 window.onload=function(){
- document.getElementById("Kartenstapel").addEventListener("click",mischenUndNehmen,false);
- GameStart(); 
+ document.getElementById("Kartenstapel").addEventListener("click",takeACard,false);
+ generateCards();
+ handOut();
+ generateHTMLCards();
+ alreadyPlayed();
 }
-//Funktionen
-function mischenUndNehmen(){
-    ClearAll();
-    generateKartenstapel();
-    Kartenstapel=shuffle(Kartenstapel);
-}
-function GameStart(){
-    Gegner=[]; 
-    Spieler=[];
-    Kartenstapel=[]; 
-    Ablagestapel=[];
-    KarteGenerate();
 
-for(let i=0;i<5;i++){
-    Gegner.push(Kartenstapel[i+5]);
-    Spieler.push(Kartenstapel[i]);
-}
-Kartenstapel.splice(0,11);
-Ablagestapel.push(Kartenstapel[10]);
-
-updateHTML("Gegner");
-updateHTML("Spieler");
-updateHTML("Kartenstapel");
-updateHTML("Ablagestapel");
-}
-function KarteHTML(karte:Karte,Zielort:string,index:number){
-    let holdingDiv:HTMLElement=document.createElement("div");
-    holdingDiv.setAttribute("class","Karte"+""+karte.kartenFarbe);
-    document.getElementById(Zielort).appendChild(holdingDiv);
-
-    let Zahl:HTMLElement=document.createElement("p");
-    Zahl.setAttribute("class","Kartennummer");
-    Zahl.innerHTML=""+karte.kartenWert;
-    holdingDiv.appendChild(Zahl);
-
-    if(Zielort=="Spieler"){
-        holdingDiv.addEventListener("click",function(){KarteLegen(karte,index)},false);
+//Karten werden zugeordnet
+function generateCards(){
+    let gelb1:Karte={
+    kartenFarbe:"gelb",
+    kartenWert:1,
+    kartenZahl:1,
+    number:1,
     }
-}
-
-function KarteVerdeckt(karte:Karte,Zielort:string,index:number){
-    let holdingDiv:HTMLElement=document.createElement("div");
-    holdingDiv.setAttribute("class","Karte"+""+"Verdeckt");
-    document.getElementById(Zielort).appendChild(holdingDiv);
-}
-
-function KarteLegen(karte:Karte,index:number){
-    if(karte.kartenFarbe==Ablagestapel[Ablagestapel.length-1].kartenFarbe || karte.KartenWert==Ablagestapel[Ablagestapel.length-1].kartenWert){
-    Ablagestapel.push(karte);
-    Spieler.splice(index,1);
-    updateHTML("Spieler");
-    updateHTML("Ablagestapel");
+Kartenstapel.push(gelb1);
     
+    let gelb2:Karte={
+    kartenFarbe:"gelb",
+    kartenWert:2,
+    kartenZahl:2,
+    number:2,
+    }
+Kartenstapel.push(gelb2);
+    
+    let gelb3:Karte={
+    kartenFarbe:"gelb",
+    kartenWert:3,
+    kartenZahl:3,
+    number:3,
+    }
+Kartenstapel.push(gelb3);
+    
+    let gelb4:Karte={
+    kartenFarbe:"gelb",
+    kartenWert:4,
+    kartenZahl:4,
+    number:4,
+    }
+Kartenstapel.push(gelb4);
+    
+    let gelb5:Karte={
+    kartenFarbe:"gelb",
+    kartenWert:5,
+    kartenZahl:5,
+    number:5,
+    }
+Kartenstapel.push(gelb5);
+    
+    let gelb6:Karte={
+    kartenFarbe:"gelb",
+    kartenWert:6,
+    kartenZahl:6,
+    number:6,
+    }
+Kartenstapel.push(gelb6);
+    
+    let gelb7:Karte={
+    kartenFarbe:"gelb",
+    kartenWert:7,
+    kartenZahl:7,
+    number:7,
+    }
+Kartenstapel.push(gelb7);
+    
+    let gelb8:Karte={
+    kartenFarbe:"gelb",
+    kartenWert:8,
+    kartenZahl:8,
+    number:8,
+    }
+Kartenstapel.push(gelb8);
+    
+    let grün1:Karte={
+    kartenFarbe:"grün",
+    kartenWert:1,
+    kartenZahl:1,
+    number:9,
+    }
+Kartenstapel.push(grün1);
+    
+    let grün2:Karte={
+    kartenFarbe:"grün",
+    kartenWert:2,
+    kartenZahl:2,
+    number:10,
+    }
+Kartenstapel.push(grün2);
+    
+    let grün3:Karte={
+    kartenFarbe:"grün",
+    kartenWert:3,
+    kartenZahl:3,
+    number:11,
+    }
+Kartenstapel.push(grün3);
+    
+    let grün4:Karte={
+    kartenFarbe:"grün",
+    kartenWert:4,
+    kartenZahl:4,
+    number:12,
+    }
+Kartenstapel.push(grün4);
+    
+    let grün5:Karte={
+    kartenFarbe:"grün",
+    kartenWert:5,
+    kartenZahl:5,
+    number:13,
+    }
+Kartenstapel.push(grün5);
+    
+    let grün6:Karte={
+    kartenFarbe:"grün",
+    kartenWert:6,
+    kartenZahl:6,
+    number:14,
+    }
+Kartenstapel.push(grün6);
+    
+    let grün7:Karte={
+    kartenFarbe:"grün",
+    kartenWert:7,
+    kartenZahl:7,
+    number:15,
+    }
+Kartenstapel.push(grün7);
+    
+    let grün8:Karte={
+    kartenFarbe:"grün",
+    kartenWert:8,
+    kartenZahl:8,
+    number:16,
+    }
+Kartenstapel.push(grün8);
+    
+    let rot1:Karte={
+    kartenFarbe:"rot",
+    kartenWert:1,
+    kartenZahl:1,
+    number:17,
+    }
+ Kartenstapel.push(rot1);
+    
+    let rot2:Karte={
+    kartenFarbe:"rot",
+    kartenWert:2,
+    kartenZahl:2,
+    number:18,
+    }
+Kartenstapel.push(rot2);
+    
+    let rot3:Karte={
+    kartenFarbe:"rot",
+    kartenWert:3,
+    kartenZahl:3,
+    number:19,
+    }
+Kartenstapel.push(rot3);
+    
+    let rot4:Karte={
+    kartenFarbe:"rot",
+    kartenWert:4,
+    kartenZahl:4,
+    number:20,
+    }
+Kartenstapel.push(rot4);
+    
+    let rot5:Karte={
+    kartenFarbe:"rot",
+    kartenWert:5,
+    kartenZahl:5,
+    number:21,
+    }
+Kartenstapel.push(rot5);
+    
+    let rot6:Karte={
+    kartenFarbe:"rot",
+    kartenWert:6,
+    kartenZahl:6,
+    number:22,
+    }
+Kartenstapel.push(rot6);
+    
+    let rot7:Karte={
+    kartenFarbe:"rot",
+    kartenWert:7,
+    kartenZahl:7,
+    number:23,
+    }
+Kartenstapel.push(rot7);
+    
+    let rot8:Karte={
+    kartenFarbe:"rot",
+    kartenWert:8,
+    kartenZahl:8,
+    number:24,
+    }
+Kartenstapel.push(rot8);
+    
+    let blau1:Karte={
+    kartenFarbe:"blau",
+    kartenWert:1,
+    kartenZahl:1,
+    number:25,
+    }
+Kartenstapel.push(blau1);
+    
+    let blau2:Karte={
+    kartenFarbe:"blau",
+    kartenWert:2,
+    kartenZahl:2,
+    number:26,
+    }
+Kartenstapel.push(blau2);
+    
+    let blau3:Karte={
+    kartenFarbe:"blau",
+    kartenWert:3,
+    kartenZahl:3,
+    number:27,
+    }
+Kartenstapel.push(blau3);
+    
+    let blau4:Karte={
+    kartenFarbe:"blau",
+    kartenWert:4,
+    kartenZahl:4,
+    number:28,
+    }
+Kartenstapel.push(blau4);
+    
+    let blau5:Karte={
+    kartenFarbe:"blau",
+    kartenWert:5,
+    kartenZahl:5,
+    number:29,
+    }
+Kartenstapel.push(blau5);
+    
+    let blau6:Karte={
+    kartenFarbe:"blau",
+    kartenWert:6,
+    kartenZahl:6,
+    number:30,
+    }
+Kartenstapel.push(blau6);
+    
+    let blau7:Karte={
+    kartenFarbe:"blau",
+    kartenWert:7,
+    kartenZahl:7,
+    number:31,
+    }
+Kartenstapel.push(blau7);
+
+    let blau8:Karte={
+    kartenFarbe:"blau",
+    kartenWert:8,
+    kartenZahl:8,
+    number:32,
+    }
+Kartenstapel.push(blau8);
+    
+Kartenstapel.sort(function(a,b){
+     return 0.5-Math.random()})
+    }    
+function handOut(){
+    for(let i:number=0;i<5;i++){
+        Spieler.push(Kartenstapel[0]);
+        Kartenstapel.splice(0,1);
+        Gegner.push(Kartenstapel[0]);
+        Kartenstapel.splice(0,1);
+    }
+    Ablagestapel.push(Kartenstapel[0]);
+    Kartenstapel.splice(0,1);
+    generateHTMLCards();
+}
+function takeACard(){
+    if(Kartenstapel.length>0){
+        Spieler.push(Kartenstapel[0]);
+        Kartenstapel.splice(0,1);
+        Gegnerzug();   
+    }
+    generateHTMLCards()
+}
+function playingCards(Kartennummer:number){
+    if(Spieler[Kartennummer].kartenFarbe==Ablagestapel[Ablagestapel.length-1].kartenFarbe || Spieler[Kartennummer].kartenWert==Ablagestapel[Ablagestapel.length-1].kartenWert){
+        Ablagestapel.push(Spieler[Kartennummer]);
+        Spieler.splice(Kartennummer,1);
+        Gegnerzug();
+    }
+    else{
+        alert("✌")
+    }
     if(Spieler.length==0){
-        window.alert("Du hast gewonnen!");
-        GameStart();
+        alert("Du hast gewonnen!!!");
+        window.location.reload(true)
     }
-    else{ 
-        Gegnerzug();
-    }
-  } 
 }
 
-function KarteNehmen(){
-    if(checkKarten(Spieler)==false){
-        Spieler.push(Kartenstapel[Kartenstapel.length-1]);
-        Kartenstapel.splice(Kartenstapel.length-1,1);
-        updateHTML("Spieler");
-        updateHTML("Kartenstapel");
-    }
-    if(checkKarten(Spieler)==false){
-        Gegnerzug();
-    }
-}
+function alreadyPlayed(){}
+
 function Gegnerzug(){
-    let i=0;
-    for(i;i<Gegner.length;i++){
-        if(Gegner[i].kartenFarbe==Ablagestapel[Ablagestapel.length-1].kartenFarbe || Gegner[i].kartenWert==Ablagestapel[Ablagestapel.length-1].kartenWert){
-            Ablagestapel.push(Gegner[i]);
-            Gegner.splice(i,1);
-            updateHTML("Ablagestapel");
-            updateHTML("Gegner");
-            break;
-        }
+    let alreadyPlayed:boolean=false;
+    for(let m:number=0;m<Gegner.length;m++)
+    if(Gegner[m].kartenFarbe==Ablagestapel[Ablagestapel.length-1].kartenFarbe || Gegner[m].kartenWert==Ablagestapel[Ablagestapel.length-1].kartenWert){
+        Ablagestapel.push(Gegner[m]);
+        Gegner.splice(m,1);
+        alreadyPlayed=true;
+        generateHTMLCards();
+        break;
     }
-    if(Gegner.length==0){
-        window.alert("Du hast verloren!");
-        GameStart();
-    }
-    else if(i>=Gegner.length){
-        Gegner.push(Kartenstapel[Kartenstapel.length-1]);
-        Kartenstapel.splice(Kartenstapel.length-1,1);
-        updateHTML("Gegner");
-        updateHTML("Kartenstapel");
-        if(Gegner[Gegner.length-1].kartenFarbe==Ablagestapel[Ablagestapel.length-1].kartenFarbe || Gegner[Gegner.length-1].kartenWert==Ablagestapel[Ablagestapel.length-1].kartenWert){
-            Ablagestapel.push(Gegner[Gegner.length-1]);
-            Gegner.splice(Gegner.length-1,1);
-            updateHTML("Ablagestapel");
-            updateHTML("Gegner");
-        }
-    }
+}
+if (Kartenstapel.length>0 && alreadyPlayed == false){
+    Gegner.push(Kartenstapel[0]);
+    Kartenstapel.splice(0,1);
+    generateHTMLCards();
+  }
+  //if(Gegner.length==0){
+      //alert("Verloren!");}
+
+let cardsHolderPlayer:string="Spieler"
+function newFunction() {
+    return alreadyPlayed == false;
 }
 
-function checkKarten(array:Karte[]):boolean{
-    for(let i=0; i<array.length;i++){
-        if(array[i].kartenFarbe==Ablagestapel[Ablagestapel.length-1].kartenFarbe || array[i].kartenWert==Ablagestapel[Ablagestapel.length-1].kartenWert){
-            passendeKarte=true;
-            break;
-        }
-    }
-    return passendeKarte;
-}
- function updateHTML(Zielort:string){
-    ClearHTML(Zielort);
-    if (Zielort=="Spieler"){
-        for (let i=0;i<Spieler.length;i++){
-            HTMLKarte(Spieler[i],"Spieler",i);
-        }
-    }
-    if (Zielort=="Gegner"){
-        for(let i=0;i<Gegner.length;i++){
-            KarteVerdeckt(Gegner[i],"Gegner",i);
-        }
-    }
-    if(Zielort=="Ablagestapel"){
-        HTMLKarte(Ablagestapel[Ablagestapel.length-1],"Ablagestapel", Ablagestapel.length-1);   
-    }
-    if(Zielort=="Kartenstapel"){
-        KarteVerdeckt(Kartenstapel[Kartenstapel.length-1],"Kartenstapel",Kartenstapel.length-1);
-    }
-}
+function generateHTMLCards(){
+    for(let i:number=0;i<Spieler.length;i++){
+        let holdingDiv:HTMLElement=document.createElement("div");
+        holdingDiv.setAttribute("class","Card");
+        holdingDiv.setAttribute("class",Spieler[i].kartenFarbe+"");
+        holdingDiv.addEventListener("click",function(){playingCards(i);},false);
+        document.getElementById(cardsHolderPlayer).appendChild(holdingDiv);
 
-function ClearHTML(Zielort:string){
-    let Element:HTMLElement=document.getElementById(Zielort);
-    while(Element.firstChild){
-        Element.removeChild(Element.firstChild);
-    }
-}
+        let kartenWertigkeit:HTMLElement=document.createElement("p");
+        kartenWertigkeit.innerHTML=Spieler[i].kartenZahl;
+        holdingDiv.appendChild(kartenWertigkeit);
 
-function KarteGenerate(){
-    let Farbe:string;
-    for(let i=1;i<=8;i++){
-        for(let j=1;j<=4;j++){
-            if(j==1){
-                Farbe="Blau"
-            }
-            else if(j==2){
-                Farbe="Rot"
-            }
-            else if(j==3){
-                Farbe="Gelb"
-            }
-            else if(j==4){
-                Farbe="Grün"
-            }
-            let KarteNew:Karte={
-                kartenFarbe:Farbe,
-                kartenWert:i
-            }
-            Kartenstapel.push(KarteNew);
-        }
+        let switchedKartenWert:HTMLElement=document.createElement("p");
+        switchedKartenWert.innerHTML=Spieler[i].kartenZahl;
+        holdingDiv.appendChild(switchedKartenWert);
+    
     }
-}
-console.log(Kartenstapel);
+    for(let w:number=0;w<Gegner.length;w++){
+        let holdingDiv:HTMLElement=document.createElement("div");
+        holdingDiv.setAttribute("class","VerdeckteKarte");
+        document.getElementById("Computer").appendChild(holdingDiv);
+    }
+    let holdingDiv:HTMLElement=document.createElement("div");
+    holdingDiv.setAttribute("class",Ablagestapel[Ablagestapel.length-1].kartenFarbe+"");
+    document.getElementById("Ablagestapel").appendChild(holdingDiv);
 
-function shuffle(array:Karte[]){
-    let currentIndex=array.length;
-    let temporaryValue;
-    let randomIndex;
-    while(currentIndex!=0){
-        randomIndex=Math.floor(Math.random()*currentIndex);
-        currentIndex-=1;
-        temporaryValue=array[currentIndex];
-        array[currentIndex]=array[randomIndex];
-        array[randomIndex]=temporaryValue;
-    }
-    return array;
+    let kartenWert:HTMLElement=document.createElement("p");
+    kartenWert.innerHTML=Ablagestapel[Ablagestapel.length-1].kartenZahl;
+    holdingDiv.appendChild(kartenWert);
+
+    let switchedKartenWert:HTMLElement=document.createElement("p");
+    switchedKartenWert.innerHTML=Ablagestapel[Ablagestapel.length-1].kartenZahl;
+    holdingDiv.appendChild(switchedKartenWert);
 }

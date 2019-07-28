@@ -1,50 +1,91 @@
-body{
-	background-color:white;
-	font-family: Arial, Helvetica, sans-serif;
-	color: black;
-}
 header{
 	background-color: grey;
-	text-align: center;
-	font-size: 1.5em;
-	color:black;
+	padding:1.5em;
+	margin:3em;
+	margin-left: 85em;
 }
-header>p{
-	color: #000000;
+
+main{
+	padding:2em;
+	margin:0;
 }
-div #Ablagestapel{
-	position:absolute;
+p{
+	font-size: 45px;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-#Kartenstapel{
-	background-color: thistle;
-	height:150px;
-	width: 75px;
-	float: left;
-	margin-bottom: 6%;
-	margin-left: 20%;
+section{
+	border-style: double;
+	border-color: black;
+	border-width: 15px;
+	margin: 1em;
+	padding: 4em;
+	height: 20em;
+	background-color: rosybrown;
 }
-#Ablagestapel{
-	background-color:red;
-	height: 150px;
-	width:75px;
-	float: left;
-	margin-bottom: 6%;
-	margin-left: 20%; 
-}
-#Spieler{
-	background-color: aqua;
-	height: 200px;
-	width:100%;
+section:nth-of-type(4){
 	clear: both;
-	margin-bottom: -75%;
 }
-#Gegner{
-	background-color: aqua;
-	height: 200px;
-	width: 100%;
-	clear: both;
-	margin-bottom: -1%;
+.stapel{
+	float: left;
+	width: 47%;
+	padding: 40px;
+	height: 25em;
+	box-sizing: border-box;
 }
-
-
-
+section div{
+	height: 17em;
+	border-style: double;
+	border-color: black;
+	border-width: 5px;
+	border-radius: 1em;
+	widows: 10em;
+	margin-left: 1em;
+	float: left;
+}
+#Spieler div{
+	height: 17em;
+	border-style: double;
+	border-color: black;
+	border-width: 5px;
+	border-radius: 1em;
+	width: 10em;
+	margin-left: 1em;
+}
+#Ablagestapel div{
+	height: 17em;
+	border-style: double;
+	border-color: black;
+	border-width: 5px;
+	border-radius: 1em;
+	width: 10em;
+	margin-left: 1em;
+}
+#Spieler p{
+	margin-left: 1.5em;
+	margin-bottom: 2em;
+}
+#Ablagestapel p{
+	margin-left: 1.5em;
+	margin-bottom: 2em;
+}
+.VerdeckteKarte{
+	background-color: black;
+	height:17em;
+	border-style: double;
+	border-color: black;
+	border-radius: 1em;
+	border-width: 5px;
+	width:10em;
+}
+.Blau{
+	background-color: blue;
+}
+.Grün{
+	background-color: green;
+}
+.Rot{
+	background-color: red;
+}
+.Gelb{
+	background-color: yellow;
+}
